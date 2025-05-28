@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.1-alpha.3 (2025-05-28)
+
+Full Changelog: [v0.0.1-alpha.2...v0.0.1-alpha.3](https://github.com/octogen-systems/octogen-ts-api/compare/v0.0.1-alpha.2...v0.0.1-alpha.3)
+
+### Chores
+
+* **docs:** grammar improvements ([43e7650](https://github.com/octogen-systems/octogen-ts-api/commit/43e76505711cc76ee3b5b3b747f11176038c71f1))
+* improve publish-npm script --latest tag logic ([c4ee153](https://github.com/octogen-systems/octogen-ts-api/commit/c4ee153a1f1f6bea6d3efa60a467671aec09ae99))
+
 ## 0.0.1-alpha.2 (2025-05-15)
 
 Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/octogen-systems/octogen-ts-api/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
