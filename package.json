@@ -1,6 +1,6 @@
 {
   "name": "octogen-api",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "The official TypeScript library for the Octogen API API",
   "author": "Octogen API <support@octogen.ai>",
   "types": "dist/index.d.ts",
