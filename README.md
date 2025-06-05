@@ -26,7 +26,7 @@ const client = new OctogenAPI({
   octogenAPIKey: process.env['OCTOGEN_API_KEY'], // This is the default and can be omitted
 });
 
-const searchToolOutput = await client.catalog.agentSearch({ text: 'blue shoes' });
+const searchToolOutput = await client.catalog.agentSearch({ text: 'red shoes' });
 
 console.log(searchToolOutput.products);
 ```
@@ -43,7 +43,7 @@ const client = new OctogenAPI({
   octogenAPIKey: process.env['OCTOGEN_API_KEY'], // This is the default and can be omitted
 });
 
-const params: OctogenAPI.CatalogAgentSearchParams = { text: 'blue shoes' };
+const params: OctogenAPI.CatalogAgentSearchParams = { text: 'red shoes' };
 const searchToolOutput: OctogenAPI.SearchToolOutput = await client.catalog.agentSearch(params);
 ```
 
@@ -86,7 +86,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const searchToolOutput = await client.catalog.agentSearch({ text: 'blue shoes' }).catch(async (err) => {
+const searchToolOutput = await client.catalog.agentSearch({ text: 'red shoes' }).catch(async (err) => {
   if (err instanceof OctogenAPI.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
@@ -126,7 +126,7 @@ const client = new OctogenAPI({
 });
 
 // Or, configure per-request:
-await client.catalog.agentSearch({ text: 'blue shoes' }, {
+await client.catalog.agentSearch({ text: 'red shoes' }, {
   maxRetries: 5,
 });
 ```
@@ -143,7 +143,7 @@ const client = new OctogenAPI({
 });
 
 // Override per-request:
-await client.catalog.agentSearch({ text: 'blue shoes' }, {
+await client.catalog.agentSearch({ text: 'red shoes' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -166,12 +166,12 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new OctogenAPI();
 
-const response = await client.catalog.agentSearch({ text: 'blue shoes' }).asResponse();
+const response = await client.catalog.agentSearch({ text: 'red shoes' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: searchToolOutput, response: raw } = await client.catalog
-  .agentSearch({ text: 'blue shoes' })
+  .agentSearch({ text: 'red shoes' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(searchToolOutput.products);
