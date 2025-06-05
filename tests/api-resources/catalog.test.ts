@@ -80,10 +80,14 @@ describe('resource catalog', () => {
   test.skip('textSearch: required and optional params', async () => {
     const response = await client.catalog.textSearch({
       text: 'text',
+      exclusion_facets: [{ name: 'brand_name', values: ['string'] }],
       facets: [{ name: 'brand_name', values: ['string'] }],
       limit: 0,
       price_max: 0,
       price_min: 0,
+      ranking_embedding_column: 'ranking_embedding_column',
+      ranking_text: 'ranking_text',
+      retrieval_embedding_column: 'retrieval_embedding_column',
     });
   });
 

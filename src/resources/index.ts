@@ -9,6 +9,7 @@ export {
   type Category,
   type ColorInfo,
   type ContextEnum,
+  type Facet,
   type FulfillmentInfo,
   type Image,
   type Offer,

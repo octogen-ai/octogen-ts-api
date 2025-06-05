@@ -236,6 +236,22 @@ export type ContextEnum =
   | 'https://schema.org'
   | 'http://schema.org';
 
+export interface Facet {
+  /**
+   * The facet to filter by. Options: brand_name (The brand or manufacturer name of
+   * the product), product_type (The type or category of the product (e.g., shirt,
+   * pants, shoes)), gender (The target gender for the product (e.g., men, women,
+   * unisex))
+   */
+  name: 'brand_name' | 'product_type' | 'gender';
+
+  /**
+   * List of values to filter by. They should all be lowercase. Facet values can be
+   * phrases, so make sure to include the spaces.
+   */
+  values: Array<string>;
+}
+
 export interface FulfillmentInfo {
   /**
    * Store or region IDs for the fulfillment type. Must match the pattern
@@ -525,6 +541,11 @@ export namespace Organization {
 }
 
 export interface ProductEnrichment {
+  /**
+   * The target gender of the product.
+   */
+  gender?: 'male' | 'female' | 'unisex' | null;
+
   /**
    * Whether the image only contains a single product.
    */
@@ -1277,9 +1298,14 @@ export interface CatalogTextSearchParams {
   text: string;
 
   /**
+   * Facets that will be excluded from the search results.
+   */
+  exclusion_facets?: Array<Facet> | null;
+
+  /**
    * The search results will be filtered by the specified facets.
    */
-  facets?: Array<CatalogTextSearchParams.Facet> | null;
+  facets?: Array<Facet> | null;
 
   /**
    * The maximum number of results to return from the search. The default is 10.
@@ -1297,18 +1323,21 @@ export interface CatalogTextSearchParams {
    * specified value.
    */
   price_min?: number | null;
-}
 
-export namespace CatalogTextSearchParams {
-  export interface Facet {
-    name: 'brand_name' | 'product_type';
+  /**
+   * The column to use for the ranking embedding. The default is 'embedding'.
+   */
+  ranking_embedding_column?: string;
 
-    /**
-     * List of values to filter by. They should all be lowercase. Facet values can be
-     * phrases, so make sure to include the spaces.
-     */
-    values: Array<string>;
-  }
+  /**
+   * The text is converted to a vector embedding and used to rank the search results.
+   */
+  ranking_text?: string | null;
+
+  /**
+   * The column to use for the retrieval embedding. The default is 'embedding'.
+   */
+  retrieval_embedding_column?: string;
 }
 
 export interface CatalogUploadFileParams {
@@ -1324,6 +1353,7 @@ export declare namespace Catalog {
     type Category as Category,
     type ColorInfo as ColorInfo,
     type ContextEnum as ContextEnum,
+    type Facet as Facet,
     type FulfillmentInfo as FulfillmentInfo,
     type Image as Image,
     type Offer as Offer,

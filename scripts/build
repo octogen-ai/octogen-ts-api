@@ -37,8 +37,6 @@ npm exec tsc-multi
 # when building .mjs
 node scripts/utils/fix-index-exports.cjs
 cp tsconfig.dist-src.json dist/src/tsconfig.json
-cp src/internal/shim-types.d.ts dist/internal/shim-types.d.ts
-cp src/internal/shim-types.d.ts dist/internal/shim-types.d.mts
 
 node scripts/utils/postprocess-files.cjs
 
@@ -51,3 +49,9 @@ if [ -e ./scripts/build-deno ]
 then
   ./scripts/build-deno
 fi
+# build all sub-packages
+for dir in packages/*; do
+  if [ -d "$dir" ]; then
+      (cd "$dir" && yarn install && yarn build)
+  fi
+done

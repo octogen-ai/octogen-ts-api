@@ -7,16 +7,10 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^octogen-api$': '<rootDir>/src/index.ts',
-    '^octogen-api/(.*)$': '<rootDir>/src/$1',
+    '^octogen-api-mcp$': '<rootDir>/src/index.ts',
+    '^octogen-api-mcp/(.*)$': '<rootDir>/src/$1',
   },
-  modulePathIgnorePatterns: [
-    '<rootDir>/ecosystem-tests/',
-    '<rootDir>/dist/',
-    '<rootDir>/deno/',
-    '<rootDir>/deno_tests/',
-    '<rootDir>/packages/',
-  ],
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['scripts'],
 };
 
