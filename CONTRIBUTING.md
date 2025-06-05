@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/octogen-api-typescript.git
+$ npm install git+ssh://git@github.com:octogen-ai/octogen-ts-api.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/octogen-api-typescript
-$ cd octogen-api-typescript
+$ git clone https://www.github.com/octogen-ai/octogen-ts-api
+$ cd octogen-ts-api
 
 # With yarn
 $ yarn link
