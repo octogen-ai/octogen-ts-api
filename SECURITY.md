@@ -20,7 +20,7 @@ or products provided by Octogen API, please follow the respective company's secu
 
 ### Octogen API Terms and Policies
 
-Please contact support@octogen.ai for any questions or concerns regarding the security of our services.
+Please contact andrew@octogen.io for any questions or concerns regarding the security of our services.
 
 ---
 

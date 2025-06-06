@@ -26,13 +26,9 @@ const client = new OctogenAPI({
   octogenAPIKey: process.env['OCTOGEN_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const searchToolOutput = await client.catalog.agentSearch({ text: 'Find me red shoes less than $200' });
+const searchToolOutput = await client.catalog.agentSearch({ text: 'blue shoes' });
 
-  console.log(searchToolOutput.products);
-}
-
-main();
+console.log(searchToolOutput.products);
 ```
 
 ### Request & Response types
@@ -47,12 +43,8 @@ const client = new OctogenAPI({
   octogenAPIKey: process.env['OCTOGEN_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const params: OctogenAPI.CatalogAgentSearchParams = { text: 'Find me red shoes less than $200' };
-  const searchToolOutput: OctogenAPI.SearchToolOutput = await client.catalog.agentSearch(params);
-}
-
-main();
+const params: OctogenAPI.CatalogAgentSearchParams = { text: 'blue shoes' };
+const searchToolOutput: OctogenAPI.SearchToolOutput = await client.catalog.agentSearch(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -94,21 +86,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const searchToolOutput = await client.catalog
-    .agentSearch({ text: 'Find me red shoes less than $200' })
-    .catch(async (err) => {
-      if (err instanceof OctogenAPI.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
-}
-
-main();
+const searchToolOutput = await client.catalog.agentSearch({ text: 'blue shoes' }).catch(async (err) => {
+  if (err instanceof OctogenAPI.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
@@ -140,7 +126,7 @@ const client = new OctogenAPI({
 });
 
 // Or, configure per-request:
-await client.catalog.agentSearch({ text: 'Find me red shoes less than $200' }, {
+await client.catalog.agentSearch({ text: 'blue shoes' }, {
   maxRetries: 5,
 });
 ```
@@ -157,7 +143,7 @@ const client = new OctogenAPI({
 });
 
 // Override per-request:
-await client.catalog.agentSearch({ text: 'Find me red shoes less than $200' }, {
+await client.catalog.agentSearch({ text: 'blue shoes' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -180,12 +166,12 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new OctogenAPI();
 
-const response = await client.catalog.agentSearch({ text: 'Find me red shoes less than $200' }).asResponse();
+const response = await client.catalog.agentSearch({ text: 'blue shoes' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: searchToolOutput, response: raw } = await client.catalog
-  .agentSearch({ text: 'Find me red shoes less than $200' })
+  .agentSearch({ text: 'blue shoes' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(searchToolOutput.products);
@@ -379,7 +365,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/octogen-systems/octogen-ts-api/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/octogen-ai/octogen-ts-api/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

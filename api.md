@@ -9,6 +9,7 @@ Types:
 - <code><a href="./src/resources/catalog.ts">Category</a></code>
 - <code><a href="./src/resources/catalog.ts">ColorInfo</a></code>
 - <code><a href="./src/resources/catalog.ts">ContextEnum</a></code>
+- <code><a href="./src/resources/catalog.ts">Facet</a></code>
 - <code><a href="./src/resources/catalog.ts">FulfillmentInfo</a></code>
 - <code><a href="./src/resources/catalog.ts">Image</a></code>
 - <code><a href="./src/resources/catalog.ts">Offer</a></code>
