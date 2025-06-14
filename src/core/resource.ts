@@ -2,7 +2,7 @@
 
 import type { OctogenAPI } from '../client';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: OctogenAPI;
 
   constructor(client: OctogenAPI) {
