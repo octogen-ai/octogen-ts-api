@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-06-14)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/octogen-ai/octogen-ts-api/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([2ba5d39](https://github.com/octogen-ai/octogen-ts-api/commit/2ba5d3925ba4c013f677de7d2c0ba5b72f88587a))
+
+
+### Chores
+
+* avoid type error in certain environments ([9e7f2fa](https://github.com/octogen-ai/octogen-ts-api/commit/9e7f2fa5232ccd85515b022ffd756d7bbe32dd5b))
+* **internal:** add pure annotations, make base APIResource abstract ([c656992](https://github.com/octogen-ai/octogen-ts-api/commit/c6569929e3cc65b11b130aca97876a7fa1d825a3))
+
 ## 0.1.0-alpha.1 (2025-06-06)
 
 Full Changelog: [v0.0.1-alpha.3...v0.1.0-alpha.1](https://github.com/octogen-ai/octogen-ts-api/compare/v0.0.1-alpha.3...v0.1.0-alpha.1)
