@@ -1,6 +1,6 @@
 # Octogen API TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/octogen-api.svg)](https://npmjs.org/package/octogen-api) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/octogen-api)
+[![NPM version](<https://img.shields.io/npm/v/octogen-api.svg?label=npm%20(stable)>)](https://npmjs.org/package/octogen-api) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/octogen-api)
 
 This library provides convenient access to the Octogen API REST API from server-side TypeScript or JavaScript.
 
@@ -254,9 +254,8 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.foo.create({
-  foo: 'my_param',
-  bar: 12,
+client.catalog.agentSearch({
+  // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
 });
