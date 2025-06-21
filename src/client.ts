@@ -210,6 +210,7 @@ export class OctogenAPI {
       timeout: this.timeout,
       logger: this.logger,
       logLevel: this.logLevel,
+      fetch: this.fetch,
       fetchOptions: this.fetchOptions,
       octogenAPIKey: this.octogenAPIKey,
       ...options,
